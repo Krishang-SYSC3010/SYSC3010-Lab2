@@ -15,12 +15,12 @@ s.bind((test)
        
 while 1:
     data = sys.stdin.readline().strip()
-    if not len(data):
-       break
     for i in range (1, n + 1)
        data = "Message " + str(i)
-    #  s.sendall(data.encode('utf-8'))
+       if not len(data):
+              break
+       if data:
+              data, address = sock.recvfrom(port)
+       #s.sendall(data.encode('utf-8'))
        s.sendto(data1.encode('utf-8'), server_address)
-    if data:
-       data, address = sock.recvfrom(port)
 s.shutdown(1)
