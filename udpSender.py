@@ -9,14 +9,18 @@ n = int(sys.argv[3])
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 port = int(textport)
 server_address = (host, port)
+s.bind((server_address)
 
 while 1:
-    print ("Enter data to transmit: ENTER to quit")
-    data = sys.stdin.readline().strip()
-    
     if not len(data):
-        break
-        
+       break
+       
+    data = sys.stdin.readline().strip()
+    data, address = sock.recvfrom(4096)
+       
+    if data:
+       sent = sock.sendto(data, address)
+   
     for i in range (1, n + 1):
         data1 = data + "(" + str(i) + ")"
         print ("data sent: " + data)
